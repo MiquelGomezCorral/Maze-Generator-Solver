@@ -12,6 +12,9 @@ def main():
     CHANGED_SIZE: bool = False
     TIME_SINCE_CHANGED_SIZE: float = 0
 
+    SHOW_TEXT: bool = True
+    STEP_BY_STEP: bool = True
+
     REFERENCE_FPS = 1200
     text_size: int = 15
     text_offSet: int = 10
@@ -37,8 +40,11 @@ def main():
 
     SolveKeyText = Text("Solve (s)", None,
                         WIDTH - text_size * 12 - text_offSet , text_size * 1 - text_offSet)
-    ResetKeyText = Text("Rest maze (r / t)", TYPES_OF_MAZES[INDEX_TYPE_OF_MAZE],
+    ResetKeyText = Text("Rest maze (r / f)", TYPES_OF_MAZES[INDEX_TYPE_OF_MAZE],
                         WIDTH - text_size * 12 - text_offSet, text_size * 2 - text_offSet)
+    StepByStepKeyText = Text("Step by Step Solve (d)", True,
+                        WIDTH - text_size * 12 - text_offSet, text_size * 3 - text_offSet)
+
     ChangingMazeKeyText = Text("Change maze (q)", None,
                                WIDTH - text_size * 22 - text_offSet, text_size * 3 - text_offSet)
     StartChangingMazeKeyText = Text("Start changing maze (e)", None,
@@ -55,7 +61,7 @@ def main():
 
     TEXTS = [PathText, ManhattanText, EuclideanText, ExploredCellsText, SolutionLengthText, TimeSolvingText,
              TimeSolvingText, SolveKeyText, ResetKeyText, ChangingMazeKeyText, StartChangingMazeKeyText,
-             StopChangingMazeKeyText, HorizontalSizeText, VerticalSizeText]
+             StopChangingMazeKeyText, HorizontalSizeText, VerticalSizeText, StepByStepKeyText]
     # ========================= BASIC =========================
     SCREEN = py.display.set_mode((WIDTH, HEIGHT))
     py.display.set_caption('Py Double pendulum simulation')
@@ -74,7 +80,11 @@ def main():
         # ========================= COMPONENTS AND TEXT=========================
         SCREEN.fill((0, 0, 0))
         MAZE.draw_maze(SCREEN)
-        if SOLVING_MAZE: SOLVING_MAZE = not MAZE.step_solve_maze_a_star()
+        if SOLVING_MAZE:
+            while SOLVING_MAZE:
+                SOLVING_MAZE = not MAZE.step_solve_maze_a_star()
+                if STEP_BY_STEP: break
+
         if CHANGING_MAZE: MAZE.change_maze()
 
         PathText.set_value(Path)
@@ -86,11 +96,13 @@ def main():
         TimeSolvingText.set_value(round(MAZE.get_time_solving(),3))
 
         ResetKeyText.set_value(TYPES_OF_MAZES[INDEX_TYPE_OF_MAZE])
+        StepByStepKeyText.set_value(STEP_BY_STEP)
 
         HorizontalSizeText.set_value(MAZE_SIZE_H)
         VerticalSizeText.set_value(MAZE_SIZE_V)
 
         for text in TEXTS:
+            if not SHOW_TEXT: break
             draw_text(text)
         # ========================= EVENTS =========================
         events = py.event.get()
@@ -102,11 +114,14 @@ def main():
                 if event.key == py.K_ESCAPE:
                     RUNNING_GAME = False
                     break
+                if event.key == py.K_t:
+                    SHOW_TEXT = not SHOW_TEXT
+
                 # Change
                 elif event.key == py.K_r:
                     MAZE.regenerate_maze()
                     CHANGING_MAZE = False
-                elif event.key == py.K_t:
+                elif event.key == py.K_f:
                     INDEX_TYPE_OF_MAZE = (INDEX_TYPE_OF_MAZE + 1) % len(TYPES_OF_MAZES)
                     MAZE.set_type_of_maze(TYPES_OF_MAZES[INDEX_TYPE_OF_MAZE])
                 elif event.key == py.K_e:
@@ -115,6 +130,8 @@ def main():
                 elif event.key == py.K_w:
                     CHANGING_MAZE = False
                 # Solver
+                elif event.key == py.K_d and not SOLVING_MAZE:
+                    STEP_BY_STEP = not STEP_BY_STEP
                 elif event.key == py.K_s and not SOLVING_MAZE:
                     CHANGING_MAZE = False
                     SOLVING_MAZE = True
