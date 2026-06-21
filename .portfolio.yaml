@@ -4,7 +4,7 @@ title:
 finished: finished
 descriptionShort:
   en: Mazes are an interesting application of graph and algorithm theory. They can be represented in many ways, but the objective is always to navigate from one tile to another (the exit). Here, we use pathfinding algorithms like A* or Greedy to find the best solution. Click to see how mazes are generated and solved step by step!
-  es: Los laberintos son una aplicación muy interesante de la teoría de grafos y algoritmos. Se pueden representar de muchas maneras, pero el objetivo siempre es el mismo: encontrar el camino desde el punto de inicio hasta la salida. Aquí utilizo algoritmos como A* o Greedy para resolverlos paso a paso. ¡Haz clic y descubre cómo funcionan!
+  es: "Los laberintos son una aplicación muy interesante de la teoría de grafos y algoritmos. Se pueden representar de muchas maneras, pero el objetivo siempre es el mismo: encontrar el camino desde el punto de inicio hasta la salida. Aquí utilizo algoritmos como A* o Greedy para resolverlos paso a paso. ¡Haz clic y descubre cómo funcionan!"
 descriptionLong:
   en: |
     Mazes are an interesting application of graph and algorithm theory. They can be represented in many ways, but the objective is always to navigate from one tile to another (the exit). Using Python, Pygame, and NumPy, we employ pathfinding algorithms like A* or Greedy to find the best solution. Two different maze generation algorithms are used: Origin Shift and DFS. Various strategies are then applied to solve them based on different heuristics. Many others can be implemented (also, since DFS is a somewhat simplistic maze generator), so you are more than welcome to contribute!
