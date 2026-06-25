@@ -23,10 +23,14 @@ screenShoots:
   - readme_images/MazeSolver (7).webp
   - readme_images/MazeSolver (8).webp
 youtube: bZt4bsz9n9Q
+date:
+  en: Sep 2024
+  es: Sep 2024
 keywords:
   en: [maze generation, maze solving, pathfinding, A* algorithm, greedy search, graph theory, DFS, origin shift, grid maze, shortest path, heuristic search]
   es: [generación de laberintos, resolución de laberintos, búsqueda de caminos, algoritmo A*, búsqueda voraz, teoría de grafos, DFS, origin shift, laberinto de cuadrícula, camino más corto, búsqueda heurística]
 slug: Maze-Generator-Solver
 order: 55
 featured: false
+
 
