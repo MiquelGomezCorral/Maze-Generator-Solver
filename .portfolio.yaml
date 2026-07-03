@@ -12,16 +12,16 @@ descriptionLong:
     En este proyecto exploro la teoría de grafos aplicada a los laberintos, donde el objetivo es siempre encontrar la ruta más eficiente desde la entrada hasta la salida. Usando Python, Pygame y NumPy, he implementado algoritmos como A* y Greedy para resolverlos. También he utilizado dos métodos para generarlos: Origin Shift y DFS. Este último es algo aburrido, por lo que estaría bien implementar otros y compararlo. Modificar le código es sencillo, si tienes ideas o quieres contribuir con nuevas mejoras, ¡eres más que bienvenido!
 technologies: [python, pygame, numpy, ai]
 tags: [personal]
-logo: readme_images/MazeSolver (1).webp
+logo: readme_images/MazeSolver (2)_169.webp
 screenShoots:
-  - readme_images/MazeSolver (1).webp
-  - readme_images/MazeSolver (2).webp
-  - readme_images/MazeSolver (3).webp
-  - readme_images/MazeSolver (4).webp
-  - readme_images/MazeSolver (5).webp
-  - readme_images/MazeSolver (6).webp
-  - readme_images/MazeSolver (7).webp
-  - readme_images/MazeSolver (8).webp
+  - readme_images/MazeSolver (1)_169.webp
+  - readme_images/MazeSolver (2)_169.webp
+  - readme_images/MazeSolver (3)_169.webp
+  - readme_images/MazeSolver (4)_169.webp
+  - readme_images/MazeSolver (5)_169.webp
+  - readme_images/MazeSolver (6)_169.webp
+  - readme_images/MazeSolver (7)_169.webp
+  - readme_images/MazeSolver (8)_169.webp
 youtube: bZt4bsz9n9Q
 date:
   en: Sep 2024
@@ -32,6 +32,5 @@ keywords:
 slug: Maze-Generator-Solver
 relevancy: 52
 featured: false
-
 
 

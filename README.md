@@ -15,3 +15,15 @@ You can customize its size and solve it with the shown controls.
 
 The solution will be shown as it is generated.
 
+---
+
+<!-- portfolio-gallery:start -->
+## Gallery
+
+<p align="center">
+  <img src="readme_images/MazeSolver%20(1)_169.webp" width="48%" />
+  <img src="readme_images/MazeSolver%20(2)_169.webp" width="48%" />
+  <img src="readme_images/MazeSolver%20(3)_169.webp" width="48%" />
+  <img src="readme_images/MazeSolver%20(4)_169.webp" width="48%" />
+</p>
+<!-- portfolio-gallery:end -->
