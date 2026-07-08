@@ -13,6 +13,7 @@ descriptionLong:
 technologies: [python, pygame, numpy, ai]
 tags: [personal]
 logo: readme_images/MazeSolver (2)_169.webp
+gif: readme_images/Maze Solver.gif
 screenShoots:
   - readme_images/MazeSolver (1)_169.webp
   - readme_images/MazeSolver (2)_169.webp
@@ -32,5 +33,4 @@ keywords:
 slug: Maze-Generator-Solver
 relevancy: 52
 featured: false
-
 
